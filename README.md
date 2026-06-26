@@ -61,13 +61,13 @@ Optional for deployment:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/entbappy/BappyGPT.git
+git clone https://github.com/maddy-abhishek/AI-Assistant.git
 ```
 
 ### 2. Navigate to the project directory
 
 ```bash
-cd BappyGPT
+cd AI-Assistant
 ```
 
 ### 3. Create a virtual environment
@@ -75,13 +75,13 @@ cd BappyGPT
 Using conda:
 
 ```bash
-conda create -n bappygpt python=3.11 -y
+conda create -n AI-Assistant python=3.11 -y
 ```
 
 ### 4. Activate the virtual environment
 
 ```bash
-conda activate bappygpt
+conda activate AI-Assistant
 ```
 
 ### 5. Install dependencies
@@ -135,7 +135,7 @@ http://127.0.0.1:8080
 ## Project Structure
 
 ```text
-BappyGPT/
+AI-Assistant/
 │
 ├── app.py                  # FastAPI app and streaming chat endpoints
 ├── agent.py                # LangGraph agent setup and tool orchestration
@@ -161,18 +161,18 @@ BappyGPT/
 ### 1. Build the Docker image
 
 ```bash
-docker build -t bappygpt .
+docker build -t AI-Assistant .
 ```
 
 ### 2. Run the Docker container
 
 ```bash
 docker run -d \
-  --name bappygpt \
+  --name AI-Assistant \
   --restart always \
   -p 8080:8080 \
   --env-file .env \
-  bappygpt
+  AI-Assistant
 ```
 
 The app will be available at:
@@ -215,13 +215,13 @@ Create an Amazon ECR repository.
 Example full ECR image URI:
 
 ```text
-315865595366.dkr.ecr.us-east-1.amazonaws.com/bappygpt
+315865595366.dkr.ecr.us-east-1.amazonaws.com/AI-Assistant
 ```
 
 For GitHub Secrets, only save the repository name:
 
 ```text
-ECR_REPO=bappygpt
+ECR_REPO=AI-Assistant
 ```
 
 Do not save the full ECR URI as `ECR_REPO`.
@@ -327,11 +327,11 @@ Example:
 
 ```text
 AWS_DEFAULT_REGION=us-east-1
-ECR_REPO=bappygpt
+ECR_REPO=AI-Assistant
 GOOGLE_MODEL=gemini-2.5-flash
 LANGSMITH_TRACING=true
 LANGSMITH_ENDPOINT=https://api.smith.langchain.com
-LANGSMITH_PROJECT=bappygpt
+LANGSMITH_PROJECT=AI-Assistant
 ```
 
 ---
